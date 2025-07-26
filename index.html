@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Girish Lade - Full-Stack Developer, Designer & AI Builder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Tiro+Devanagari+Hindi:ital@0;1&amp;display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a1a1a; /* Darker, richer background */
+            color: #e2e8f0;
+        }
+
+        /* Animated background pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M 25 50 C 25 63.807 36.193 75 50 75 C 63.807 75 75 63.807 75 50 C 75 36.193 63.807 25 50 25 C 36.193 25 25 36.193 25 50 Z" fill="none" stroke="%23334155" stroke-width="1"/><path d="M 50 0 L 50 100 M 0 50 L 100 50" fill="none" stroke="%23334155" stroke-width="0.5"/></svg>');
+            background-size: 100px 100px;
+            opacity: 0.05;
+            z-index: -1;
+            animation: pan-background 60s linear infinite;
+        }
+
+        @keyframes pan-background {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
+        }
+
+        .glass-effect {
+            background: rgba(26, 26, 26, 0.6); /* Slightly darker glass */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 165, 0, 0.2); /* Saffron/Orange border */
+            box-shadow: 0 0 20px rgba(255, 165, 0, 0.1);
+        }
+        .gradient-text {
+            font-family: 'Tiro Devanagari Hindi', serif;
+            background: linear-gradient(to right, #ff9966, #ff5e62, #ffc371); /* Saffron and Gold gradient */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .section-glow {
+            position: relative;
+        }
+        .section-glow::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(255, 153, 102, 0.1), transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        /* Traditional border for project cards */
+        .traditional-border {
+            border: 2px solid transparent;
+            border-image: linear-gradient(to right, #ff9966, #ff5e62) 1;
+            transition: all 0.3s ease;
+        }
+        .traditional-border:hover {
+            box-shadow: 0 0 25px rgba(255, 94, 98, 0.3);
+        }
+
+        .button-primary {
+             background: linear-gradient(to right, #ff9966, #ff5e62);
+             color: white;
+        }
+        .button-secondary {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 165, 0, 0.3);
+            color: white;
+        }
+        .button-primary:hover, .button-secondary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(255, 94, 98, 0.2);
+        }
+
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-effect">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold gradient-text">Girish Lade</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="hover:text-orange-300 transition-colors duration-300">About</a>
+                <a href="#projects" class="hover:text-orange-300 transition-colors duration-300">Projects</a>
+                <a href="#github" class="hover:text-orange-300 transition-colors duration-300">GitHub</a>
+                <a href="#contact" class="hover:text-orange-300 transition-colors duration-300">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#about" class="block py-2 hover:text-orange-300 transition-colors duration-300">About</a>
+            <a href="#projects" class="block py-2 hover:text-orange-300 transition-colors duration-300">Projects</a>
+            <a href="#github" class="block py-2 hover:text-orange-300 transition-colors duration-300">GitHub</a>
+            <a href="#contact" class="block py-2 hover:text-orange-300 transition-colors duration-300">Contact</a>
+        </div>
+    </header>
+
+    <main class="pt-24">
+        <!-- Hero Section -->
+        <section id="home" class="container mx-auto px-6 py-20 md:py-32 text-center section-glow">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">
+                    <span class="gradient-text">Developer, Designer, AI Builder</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-400 mb-8">
+                    Crafting innovative and useful AI-powered tools for developers. Methodical, curious, and always thinking ahead.
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <a href="mailto:girishlade111@gmail.com" class="button-primary font-bold py-3 px-6 rounded-lg transition-transform">Get In Touch</a>
+                    <a href="#projects" class="button-secondary font-bold py-3 px-6 rounded-lg transition-transform">View My Work</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Links -->
+        <div class="container mx-auto px-6 pb-20 flex justify-center items-center space-x-6">
+            <a href="https://www.instagram.com/girish_lade_/" target="_blank" class="text-slate-400 hover:text-orange-300 transition-colors"><i data-lucide="instagram" class="w-7 h-7"></i></a>
+            <a href="https://www.linkedin.com/in/girish-lade-075bba201/" target="_blank" class="text-slate-400 hover:text-orange-300 transition-colors"><i data-lucide="linkedin" class="w-7 h-7"></i></a>
+            <a href="https://github.com/girishlade111" target="_blank" class="text-slate-400 hover:text-orange-300 transition-colors"><i data-lucide="github" class="w-7 h-7"></i></a>
+            <a href="https://codepen.io/Girish-Lade-the-looper" target="_blank" class="text-slate-400 hover:text-orange-300 transition-colors"><i data-lucide="codepen" class="w-7 h-7"></i></a>
+        </div>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-20 bg-black/20 section-glow">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">About Me</h2>
+                <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6 text-slate-300">
+                        <p>I'm a multi-skilled developer, designer, and AI builder driven by innovation and utility. My work spans web development, AI tools, data science, and UX/UI design, with a clear mission to create free, AI-powered tools for developers under my brand, <span class="font-semibold text-orange-400">GBStack</span>.</p>
+                        <p>Extremely practical and forward-thinking, I prefer skeptical, detail-driven analysis. I seek automation, efficiency, and user-centric design, balancing daily hands-on coding with strategic growth planning.</p>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="glass-effect p-6 rounded-lg">
+                            <h3 class="font-semibold text-lg text-white mb-3 flex items-center"><i data-lucide="brain-circuit" class="mr-2 text-orange-400"></i> Core Skills & Roles</h3>
+                            <ul class="list-disc list-inside text-slate-300 space-y-2">
+                                <li>Full-Stack Web & App Developer</li>
+                                <li>UI/UX Designer with a modern aesthetic</li>
+                                <li>AI Tools Maker & Prompt Engineer</li>
+                                <li>Data Science Enthusiast</li>
+                            </ul>
+                        </div>
+                        <div class="glass-effect p-6 rounded-lg">
+                            <h3 class="font-semibold text-lg text-white mb-3 flex items-center"><i data-lucide="rocket" class="mr-2" style="color: #ff5e62;"></i> Goals & Interests</h3>
+                            <ul class="list-disc list-inside text-slate-300 space-y-2">
+                                <li>Build free, high-utility AI developer tools</li>
+                                <li>Scale traffic via SEO & SMM</li>
+                                <li>Track trends in tech, crypto, and AI</li>
+                                <li>Continuously improve tools and workflows</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 section-glow">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">Key Projects</h2>
+                <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Project Card 1 -->
+                    <div class="glass-effect rounded-lg p-6 flex flex-col traditional-border">
+                        <h3 class="text-xl font-bold text-white mb-2">GBStack</h3>
+                        <p class="text-sm text-orange-400 font-medium mb-4">AI-Integrated Dev Tools Platform</p>
+                        <p class="text-slate-300 flex-grow">My flagship brand for delivering free, high-quality, AI-powered tools to the developer community. Includes full branding, logo, and a free domain setup.</p>
+                    </div>
+                    <!-- Project Card 2 -->
+                    <div class="glass-effect rounded-lg p-6 flex flex-col traditional-border">
+                        <h3 class="text-xl font-bold text-white mb-2">Multi-LLM AI Agent</h3>
+                        <p class="text-sm text-orange-400 font-medium mb-4">Custom AI Agent</p>
+                        <p class="text-slate-300 flex-grow">A sophisticated, custom-built AI agent that leverages multiple powerful models like DeepSeek, Mistral, Gemini, and Zephyr for complex tasks.</p>
+                    </div>
+                    <!-- Project Card 3 -->
+                    <div class="glass-effect rounded-lg p-6 flex flex-col traditional-border">
+                        <h3 class="text-xl font-bold text-white mb-2">AI Website Builder</h3>
+                        <p class="text-sm text-orange-400 font-medium mb-4">Inspired by bolt.new & lovable.dev</p>
+                        <p class="text-slate-300 flex-grow">Features Gemini API integration, a dual-view editor and preview, live code streaming, prompt history, and more for rapid AI-assisted web development.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack Section -->
+        <section id="tech-stack" class="py-20 bg-black/20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">Tech Stack & Tools</h2>
+                <div class="max-w-4xl mx-auto flex flex-wrap justify-center items-center gap-6 md:gap-8">
+                    <div class="text-center p-4 glass-effect rounded-lg w-32 h-32 flex flex-col justify-center items-center transition-transform hover:scale-110"><i data-lucide="react" class="w-12 h-12 text-orange-400 mb-2"></i><span class="font-semibold">React</span></div>
+                    <div class="text-center p-4 glass-effect rounded-lg w-32 h-32 flex flex-col justify-center items-center transition-transform hover:scale-110"><i data-lucide="code" class="w-12 h-12 text-red-400 mb-2"></i><span class="font-semibold">HTML/CSS/JS</span></div>
+                    <div class="text-center p-4 glass-effect rounded-lg w-32 h-32 flex flex-col justify-center items-center transition-transform hover:scale-110"><i data-lucide="wind" class="w-12 h-12 text-yellow-400 mb-2"></i><span class="font-semibold">Tailwind CSS</span></div>
+                    <div class="text-center p-4 glass-effect rounded-lg w-32 h-32 flex flex-col justify-center items-center transition-transform hover:scale-110"><i data-lucide="database" class="w-12 h-12 text-green-400 mb-2"></i><span class="font-semibold">Firebase</span></div>
+                    <div class="text-center p-4 glass-effect rounded-lg w-32 h-32 flex flex-col justify-center items-center transition-transform hover:scale-110"><i data-lucide="brain-cog" class="w-12 h-12 text-purple-400 mb-2"></i><span class="font-semibold">LLM APIs</span></div>
+                    <div class="text-center p-4 glass-effect rounded-lg w-32 h-32 flex flex-col justify-center items-center transition-transform hover:scale-110"><i data-lucide="gem" class="w-12 h-12 text-pink-400 mb-2"></i><span class="font-semibold">Gemini</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GitHub Projects Section -->
+        <section id="github" class="py-20 section-glow">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">My GitHub Projects</h2>
+                <div id="github-repos" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- GitHub repos will be dynamically inserted here -->
+                    <div id="loader" class="col-span-full flex justify-center items-center">
+                        <div class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-orange-500"></div>
+                    </div>
+                </div>
+                 <div class="text-center mt-12">
+                    <a href="https://github.com/girishlade111" target="_blank" class="button-secondary font-bold py-3 px-6 rounded-lg transition-transform">
+                        View All on GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-black/20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Let's Connect</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto mb-8">
+                    I'm always open to discussing new projects, creative ideas, or opportunities to be part of an innovative team. Feel free to reach out.
+                </p>
+                <a href="mailto:girishlade111@gmail.com" class="inline-block button-primary font-bold py-4 px-8 rounded-lg text-lg transition-transform">
+                    girishlade111@gmail.com
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black/30 border-t border-orange-500/20">
+        <div class="container mx-auto px-6 py-6 text-center text-slate-400">
+            <p>&copy; <span id="year"></span> Girish Lade. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Fetch GitHub Repos
+        async function getGitHubRepos() {
+            const reposContainer = document.getElementById('github-repos');
+            const loader = document.getElementById('loader');
+            const username = 'girishlade111';
+            const url = `https://api.github.com/users/${username}/repos?sort=updated&direction=desc`;
+
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const repos = await response.json();
+                
+                loader.style.display = 'none'; // Hide loader
+
+                repos.slice(0, 6).forEach(repo => { // Display latest 6 repos
+                    const repoCard = `
+                        <div class="glass-effect rounded-lg p-6 flex flex-col traditional-border">
+                            <div class="flex-grow">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="text-xl font-bold text-white pr-4">${repo.name}</h3>
+                                    <a href="${repo.html_url}" target="_blank" class="text-slate-400 hover:text-orange-400 transition-colors">
+                                        <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                                    </a>
+                                </div>
+                                <p class="text-slate-400 text-sm mb-4">${repo.description || 'No description provided.'}</p>
+                            </div>
+                            <div class="flex items-center text-sm text-slate-500 mt-4">
+                                ${repo.language ? `<span class="flex items-center mr-4"><i data-lucide="code-2" class="w-4 h-4 mr-1.5 text-orange-400"></i> ${repo.language}</span>` : ''}
+                                <span class="flex items-center mr-4"><i data-lucide="star" class="w-4 h-4 mr-1.5 text-yellow-400"></i> ${repo.stargazers_count}</span>
+                                <span class="flex items-center"><i data-lucide="git-fork" class="w-4 h-4 mr-1.5 text-green-400"></i> ${repo.forks_count}</span>
+                            </div>
+                        </div>
+                    `;
+                    reposContainer.innerHTML += repoCard;
+                });
+                lucide.createIcons(); // Re-render icons after adding new elements
+
+            } catch (error) {
+                loader.style.display = 'none'; // Hide loader
+                reposContainer.innerHTML = `<p class="text-center col-span-full text-red-400">Failed to load GitHub projects. Please try again later.</p>`;
+                console.error("Could not fetch GitHub repos:", error);
+            }
+        }
+
+        // Call the function to fetch repos when the page loads
+        window.onload = getGitHubRepos;
+    </script>
+</body>
+</html>
